@@ -25,12 +25,9 @@ namespace Agnosis
                     Console.WriteLine(path);
                 }
 
+                Console.WriteLine("Masking and copying files...");
                 fileMasks = FileAccess.CopyFilesAndMask(filePaths,"Input","Output");
-
-                foreach (var file in fileMasks.Keys)
-                {
-                    Console.WriteLine($"Key: {file} - Value: {fileMasks[file]}");
-                }
+                Console.WriteLine("Creating Excel spreadsheet...");
                 ExcelInteropAccess.CreateExcelSpreadsheet(fileMasks,"output\\test.xlsx");
 
             }
@@ -40,7 +37,7 @@ namespace Agnosis
                 Console.WriteLine("An error occurred while processing files. Some files may not have been copied. Please let Brandon know about this...",e);
                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
-
+            Console.WriteLine("DONE! :D");
             Console.WriteLine("Press any key to continue");
             Console.ReadLine();
 
