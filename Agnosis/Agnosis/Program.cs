@@ -33,6 +33,7 @@ namespace Agnosis
             }
             catch (Exception e)
             {
+                Console.WriteLine("D:");
                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 Console.WriteLine("An error occurred while processing files. Some files may not have been copied. Please let Brandon know about this...",e);
                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
