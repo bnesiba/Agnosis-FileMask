@@ -15,8 +15,6 @@ namespace Agnosis
         {
             try
             {
-                Dictionary<string, string> fileMasks = new Dictionary<string, string>();
-
                 Console.WriteLine("Getting file paths...");
                 var filePaths = FileAccess.GetFilePathsInDirectory("Input");
                 foreach (var path in filePaths)
@@ -25,7 +23,7 @@ namespace Agnosis
                 }
 
                 Console.WriteLine("Masking and copying files...");
-                fileMasks = FileAccess.CopyFilesAndMask(filePaths,"Input","Output");
+                var fileMasks = FileAccess.CopyFilesAndMask(filePaths,"Input","Output");
                 Console.WriteLine("Creating Excel spreadsheet...");
                 ExcelInteropAccess.CreateExcelSpreadsheet(fileMasks,"output\\test.xlsx");
 
