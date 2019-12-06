@@ -41,6 +41,7 @@ namespace Agnosis.Util
             }
             catch (Exception e)
             {
+                Console.WriteLine("An error occurred while creating excel spreadsheet");
                 throw;
             }
 
