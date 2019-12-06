@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Agnosis.Util;
+using FileAccess = Agnosis.Util.FileAccess;
 
 namespace Agnosis
 {
@@ -29,6 +31,7 @@ namespace Agnosis
                 {
                     Console.WriteLine($"Key: {file} - Value: {fileMasks[file]}");
                 }
+                ExcelInteropAccess.CreateExcelSpreadsheet(fileMasks,"output\\test.xlsx");
 
             }
             catch (Exception e)
