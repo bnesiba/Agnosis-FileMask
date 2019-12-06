@@ -16,10 +16,9 @@ namespace Agnosis
             try
             {
                 Dictionary<string, string> fileMasks = new Dictionary<string, string>();
-                List<string> filePaths = new List<string>();
 
                 Console.WriteLine("Getting file paths...");
-                filePaths = FileAccess.GetFilePathsInDirectory("Input");
+                var filePaths = FileAccess.GetFilePathsInDirectory("Input");
                 foreach (var path in filePaths)
                 {
                     Console.WriteLine(path);
