@@ -56,11 +56,24 @@ namespace Agnosis.Util
             return fileNameMasks;
         }
 
+        public static void RemoveFiles(List<string> filePaths)
+        {
+            foreach (string path in filePaths)
+            {
+                File.Delete(path);
+            }
+        }
+
+        public static void WriteLogFile(List<string> message)
+        {
+            System.IO.File.WriteAllLines($"{Environment.CurrentDirectory}\\ErrorLog.txt",message);
+        }
+
         private static void CopyFileToNewLocation(string originalPath, string outputPath)
         {
             int fileNameStart = outputPath.LastIndexOf("\\", StringComparison.InvariantCulture);
             Directory.CreateDirectory(outputPath.Substring(0,fileNameStart+1));
-            File.Copy(originalPath, outputPath);
+            File.Copy(originalPath, outputPath,true);
         }
     }
 }

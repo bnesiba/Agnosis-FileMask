@@ -35,7 +35,7 @@ namespace Agnosis.Util
                 excelWorkSheet.Columns[2].ColumnWidth = 32;
 
 
-                excelWorkBook.SaveAs($"{Environment.CurrentDirectory}\\{path}");
+                excelWorkBook.SaveAs(path);
                 excelWorkBook.Close();
                 excelApp.Quit();
             }

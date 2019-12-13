@@ -38,7 +38,6 @@ namespace Agnosis
             Console.WriteLine("DONE! :D");
             Console.WriteLine("Press any key to continue");
             Console.ReadLine();
-
         }
     }
 }
