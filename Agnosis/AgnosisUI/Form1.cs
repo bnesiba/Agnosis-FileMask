@@ -64,7 +64,7 @@ namespace AgnosisUI
                 ShowAlert("An error occurred while processing files. Some files may not have been copied. Please send Brandon the log file");
                 FileAccess.WriteLogFile(new List<string>{er.Message, er.StackTrace});
             }
-            WriteStatusLog("DONE! :D");
+            WriteStatusLog("DONE!");
         }
 
         private void MaskSelector_SelectedIndexChanged(object sender, EventArgs e)
