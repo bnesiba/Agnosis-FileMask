@@ -85,7 +85,7 @@ namespace AgnosisUI
 
         private void SelectFolderButton_Click(object sender, EventArgs e)
         {
-            var selectedResult = FolderBrowser.ShowDialog();
+            var selectedResult = FolderBrowser.ShowDialog(this);
             if (selectedResult == DialogResult.OK)
             {
                 MaskDirSelector.Text = FolderBrowser.SelectedPath;
@@ -94,7 +94,7 @@ namespace AgnosisUI
         }
         private void CopyPathButton_Click(object sender, EventArgs e)
         {
-            var selectedResult = FolderBrowser.ShowDialog();
+            var selectedResult = FolderBrowser.ShowDialog(this);
             if (selectedResult == DialogResult.OK)
             {
                 ResultDirSelector.Text = FolderBrowser.SelectedPath;
