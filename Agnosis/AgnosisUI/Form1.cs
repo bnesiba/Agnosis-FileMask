@@ -58,7 +58,7 @@ namespace AgnosisUI
                     FileAccess.RemoveFiles(originalFilePaths);
                 }
                 WriteStatusLog("Creating Excel spreadsheet...");
-                ExcelInteropAccess.CreateExcelSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\Spreadsheet.xlsx");
+                ExcelInteropAccess.CreateAndPopulateSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\Spreadsheet.xlsx");
                 WriteStatusLog("DONE!");
             }
             catch (Exception er)

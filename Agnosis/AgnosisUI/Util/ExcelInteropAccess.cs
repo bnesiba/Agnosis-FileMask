@@ -8,7 +8,7 @@ namespace Agnosis.Util
     {
         private static List<int> usedIndicies = new List<int>();
         private static Random rng = new Random();
-        public static void CreateExcelSpreadsheet(Dictionary<string,string> maskDictionary, string path)
+        public static void CreateAndPopulateSpreadsheet(Dictionary<string,string> maskDictionary, string path)
         {
             Application excelApp = new Application();
             Workbook excelWorkBook = null;
