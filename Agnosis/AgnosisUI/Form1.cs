@@ -59,14 +59,17 @@ namespace AgnosisUI
                 }
                 WriteStatusLog("Creating Excel spreadsheet...");
                 ExcelInteropAccess.CreateExcelSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\Spreadsheet.xlsx");
-
+                WriteStatusLog("DONE!");
             }
             catch (Exception er)
             {
-                ShowAlert("An error occurred while processing files. Some files may not have been copied. Please send Brandon the log file");
+                ShowAlert("An error occurred while processing files.\n\n" +
+                          "Files may not have been processed or included in the spreadsheet. " +
+                          "Please send Brandon the log file created in the same directory as this program.", true);
                 FileAccess.WriteLogFile(new List<string>{er.Message, er.StackTrace});
+                WriteStatusLog("AN ERROR OCCURRED! please Send Brandon the log file");
             }
-            WriteStatusLog("DONE!");
+            
         }
 
         private void MaskSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,10 +130,12 @@ namespace AgnosisUI
             StatusText.Text = "";
         }
 
-        private void ShowAlert(string message)
+        private void ShowAlert(string message, bool error = false)
         {
-            MessageBox.Show(message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var messageBoxIcon = error ? MessageBoxIcon.Error : MessageBoxIcon.Warning;
+            var messageBoxCaption = error ? "Error" : "Warning";
+            MessageBox.Show(message, messageBoxCaption,
+                MessageBoxButtons.OK, messageBoxIcon);
         }
 
         private bool MaskFolderPathIsValid(out List<string> folderPaths)
