@@ -48,7 +48,9 @@
             // 
             // MaskDirSelector
             // 
-            this.MaskDirSelector.Location = new System.Drawing.Point(10, 103);
+            this.MaskDirSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaskDirSelector.Location = new System.Drawing.Point(10, 87);
             this.MaskDirSelector.Name = "MaskDirSelector";
             this.MaskDirSelector.Size = new System.Drawing.Size(155, 20);
             this.MaskDirSelector.TabIndex = 2;
@@ -56,8 +58,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 87);
+            this.label1.Location = new System.Drawing.Point(7, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 1;
@@ -65,12 +69,14 @@
             // 
             // MaskSelector
             // 
+            this.MaskSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MaskSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MaskSelector.FormattingEnabled = true;
             this.MaskSelector.Items.AddRange(new object[] {
             "Mask In-Place",
             "Mask and Copy to Folder"});
-            this.MaskSelector.Location = new System.Drawing.Point(10, 56);
+            this.MaskSelector.Location = new System.Drawing.Point(10, 40);
             this.MaskSelector.Name = "MaskSelector";
             this.MaskSelector.Size = new System.Drawing.Size(155, 21);
             this.MaskSelector.TabIndex = 1;
@@ -78,8 +84,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 40);
+            this.label2.Location = new System.Drawing.Point(7, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 3;
@@ -87,7 +95,9 @@
             // 
             // SelectFolderButton
             // 
-            this.SelectFolderButton.Location = new System.Drawing.Point(165, 102);
+            this.SelectFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectFolderButton.Location = new System.Drawing.Point(165, 86);
             this.SelectFolderButton.Name = "SelectFolderButton";
             this.SelectFolderButton.Size = new System.Drawing.Size(79, 22);
             this.SelectFolderButton.TabIndex = 3;
@@ -97,7 +107,9 @@
             // 
             // CopyPathButton
             // 
-            this.CopyPathButton.Location = new System.Drawing.Point(405, 102);
+            this.CopyPathButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyPathButton.Location = new System.Drawing.Point(405, 86);
             this.CopyPathButton.Name = "CopyPathButton";
             this.CopyPathButton.Size = new System.Drawing.Size(79, 22);
             this.CopyPathButton.TabIndex = 5;
@@ -107,8 +119,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(247, 87);
+            this.label3.Location = new System.Drawing.Point(247, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 13);
             this.label3.TabIndex = 6;
@@ -116,7 +130,9 @@
             // 
             // ResultDirSelector
             // 
-            this.ResultDirSelector.Location = new System.Drawing.Point(249, 103);
+            this.ResultDirSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResultDirSelector.Location = new System.Drawing.Point(249, 87);
             this.ResultDirSelector.Name = "ResultDirSelector";
             this.ResultDirSelector.Size = new System.Drawing.Size(155, 20);
             this.ResultDirSelector.TabIndex = 4;
@@ -124,7 +140,9 @@
             // 
             // RunMaskButton
             // 
-            this.RunMaskButton.Location = new System.Drawing.Point(10, 140);
+            this.RunMaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RunMaskButton.Location = new System.Drawing.Point(10, 119);
             this.RunMaskButton.Name = "RunMaskButton";
             this.RunMaskButton.Size = new System.Drawing.Size(474, 31);
             this.RunMaskButton.TabIndex = 6;
@@ -134,8 +152,10 @@
             // 
             // StatusText
             // 
+            this.StatusText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusText.AutoSize = true;
-            this.StatusText.Location = new System.Drawing.Point(7, 191);
+            this.StatusText.Location = new System.Drawing.Point(7, 161);
             this.StatusText.Name = "StatusText";
             this.StatusText.Size = new System.Drawing.Size(134, 13);
             this.StatusText.TabIndex = 9;
@@ -154,9 +174,11 @@
             // 
             // WarningLabel
             // 
+            this.WarningLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WarningLabel.AutoSize = true;
             this.WarningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.WarningLabel.Location = new System.Drawing.Point(171, 59);
+            this.WarningLabel.Location = new System.Drawing.Point(171, 43);
             this.WarningLabel.Name = "WarningLabel";
             this.WarningLabel.Size = new System.Drawing.Size(294, 13);
             this.WarningLabel.TabIndex = 11;
@@ -166,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 213);
+            this.ClientSize = new System.Drawing.Size(501, 183);
             this.Controls.Add(this.WarningLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.StatusText);

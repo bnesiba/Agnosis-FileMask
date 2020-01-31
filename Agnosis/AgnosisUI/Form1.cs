@@ -32,6 +32,7 @@ namespace AgnosisUI
             if (!MaskFolderPathIsValid(out filePaths))
             {
                 ShowAlert("Mask folder path invalid. Please select a valid folder");
+                ClearStatusLog();
                 return;
             }
 
@@ -39,6 +40,7 @@ namespace AgnosisUI
             if (!CopyFolderPathIsValid())
             {
                 ShowAlert("Output folder is invalid. Please select a valid folder to copy to");
+                ClearStatusLog();
                 return;
             }
 
@@ -118,6 +120,11 @@ namespace AgnosisUI
         private void WriteStatusLog(string status)
         {
             StatusText.Text = status;
+        }
+
+        private void ClearStatusLog()
+        {
+            StatusText.Text = "";
         }
 
         private void ShowAlert(string message)

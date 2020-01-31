@@ -28,13 +28,12 @@ namespace Agnosis.Util
                     excelWorkSheet.Cells[1][row] = mask;
                     excelWorkSheet.Cells[2][row] = maskDictionary[mask];
                 }
-                //mask cells
-                var maskedValueRange = excelWorkSheet.Range[excelWorkSheet.Cells[1, 2],
-                    excelWorkSheet.Cells[maskDictionary.Count, 2]];
-                maskedValueRange.Interior.Color = XlRgbColor.rgbBlack;
 
-                excelWorkSheet.Columns[1].ColumnWidth = 40;
-                excelWorkSheet.Columns[2].ColumnWidth = 32;
+                //hide column
+                var hiddenValueRange = excelWorkSheet.Range[excelWorkSheet.Cells[1, 2],
+                    excelWorkSheet.Cells[maskDictionary.Count, 2]];
+                excelWorkSheet.Columns.AutoFit();
+                hiddenValueRange.EntireColumn.Hidden = true;
 
 
                 excelWorkBook.SaveAs(path);
