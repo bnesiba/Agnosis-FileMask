@@ -8,7 +8,7 @@ namespace Agnosis.Util
     {
         private static List<int> usedIndicies = new List<int>();
         private static Random rng = new Random();
-        public static void CreateAndPopulateSpreadsheet(Dictionary<string,string> maskDictionary, string path)
+        public static void CreateAndPopulateSpreadsheet(Dictionary<string,string> maskDictionary, string path, bool hideFilenameColumn, bool maskFilenameColumn)
         {
             Application excelApp = new Application();
             Workbook excelWorkBook = null;
@@ -33,7 +33,11 @@ namespace Agnosis.Util
                 var hiddenValueRange = excelWorkSheet.Range[excelWorkSheet.Cells[1, 2],
                     excelWorkSheet.Cells[maskDictionary.Count, 2]];
                 excelWorkSheet.Columns.AutoFit();
-                hiddenValueRange.EntireColumn.Hidden = true;
+                if (maskFilenameColumn)
+                {
+                    hiddenValueRange.Interior.Color = XlRgbColor.rgbBlack;
+                }
+                hiddenValueRange.EntireColumn.Hidden = hideFilenameColumn;
 
 
                 excelWorkBook.SaveAs(path);

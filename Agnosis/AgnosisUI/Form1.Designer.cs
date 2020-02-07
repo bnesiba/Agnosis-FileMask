@@ -44,6 +44,10 @@
             this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.WarningLabel = new System.Windows.Forms.Label();
+            this.MaskColumnCheckbox = new System.Windows.Forms.CheckBox();
+            this.HideColumnCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MaskDirSelector
@@ -140,9 +144,9 @@
             // 
             // RunMaskButton
             // 
-            this.RunMaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.RunMaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RunMaskButton.Location = new System.Drawing.Point(10, 119);
+            this.RunMaskButton.Location = new System.Drawing.Point(10, 186);
             this.RunMaskButton.Name = "RunMaskButton";
             this.RunMaskButton.Size = new System.Drawing.Size(474, 31);
             this.RunMaskButton.TabIndex = 6;
@@ -155,7 +159,7 @@
             this.StatusText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusText.AutoSize = true;
-            this.StatusText.Location = new System.Drawing.Point(7, 161);
+            this.StatusText.Location = new System.Drawing.Point(7, 228);
             this.StatusText.Name = "StatusText";
             this.StatusText.Size = new System.Drawing.Size(134, 13);
             this.StatusText.TabIndex = 9;
@@ -184,11 +188,43 @@
             this.WarningLabel.TabIndex = 11;
             this.WarningLabel.Text = "Warning: In-place mask will permenately replace all filenames";
             // 
+            // MaskColumnCheckbox
+            // 
+            this.MaskColumnCheckbox.AutoSize = true;
+            this.MaskColumnCheckbox.Location = new System.Drawing.Point(6, 19);
+            this.MaskColumnCheckbox.Name = "MaskColumnCheckbox";
+            this.MaskColumnCheckbox.Size = new System.Drawing.Size(327, 17);
+            this.MaskColumnCheckbox.TabIndex = 13;
+            this.MaskColumnCheckbox.Text = "Mask original filename column (black text w/ black background)";
+            this.MaskColumnCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // HideColumnCheckbox
+            // 
+            this.HideColumnCheckbox.AutoSize = true;
+            this.HideColumnCheckbox.Location = new System.Drawing.Point(6, 41);
+            this.HideColumnCheckbox.Name = "HideColumnCheckbox";
+            this.HideColumnCheckbox.Size = new System.Drawing.Size(163, 17);
+            this.HideColumnCheckbox.TabIndex = 14;
+            this.HideColumnCheckbox.Text = "Hide original filename column";
+            this.HideColumnCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.HideColumnCheckbox);
+            this.groupBox1.Controls.Add(this.MaskColumnCheckbox);
+            this.groupBox1.Location = new System.Drawing.Point(10, 116);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(472, 64);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Spreadsheet Settings:";
+            // 
             // AgnosisUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 183);
+            this.ClientSize = new System.Drawing.Size(501, 250);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.WarningLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.StatusText);
@@ -206,6 +242,8 @@
             this.MaximizeBox = false;
             this.Name = "AgnosisUI";
             this.Text = "Agnosis";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +265,9 @@
         private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label WarningLabel;
+        private System.Windows.Forms.CheckBox MaskColumnCheckbox;
+        private System.Windows.Forms.CheckBox HideColumnCheckbox;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

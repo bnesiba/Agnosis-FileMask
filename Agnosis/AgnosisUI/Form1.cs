@@ -21,6 +21,8 @@ namespace AgnosisUI
             this.MaskSelector.SelectedIndex = 1;
             this.StatusText.Text = "";
             FolderBrowser.SelectedPath = Environment.CurrentDirectory;
+            this.MaskColumnCheckbox.Checked = true;
+            this.HideColumnCheckbox.Checked = false;
         }
 
         private void RunMaskButton_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace AgnosisUI
                     FileAccess.RemoveFiles(originalFilePaths);
                 }
                 WriteStatusLog("Creating Excel spreadsheet...");
-                ExcelInteropAccess.CreateAndPopulateSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\Spreadsheet.xlsx");
+                ExcelInteropAccess.CreateAndPopulateSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\Spreadsheet.xlsx", HideColumnCheckbox.Checked, MaskColumnCheckbox.Checked);
                 WriteStatusLog("DONE!");
             }
             catch (Exception er)
