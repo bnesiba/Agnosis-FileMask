@@ -47,6 +47,9 @@
             this.MaskColumnCheckbox = new System.Windows.Forms.CheckBox();
             this.HideColumnCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RenameSpreadsheetCheckbox = new System.Windows.Forms.CheckBox();
+            this.SpreadsheetFileNameSelector = new System.Windows.Forms.TextBox();
+            this.SpreadsheetNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,7 +149,7 @@
             // 
             this.RunMaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RunMaskButton.Location = new System.Drawing.Point(10, 186);
+            this.RunMaskButton.Location = new System.Drawing.Point(10, 215);
             this.RunMaskButton.Name = "RunMaskButton";
             this.RunMaskButton.Size = new System.Drawing.Size(474, 31);
             this.RunMaskButton.TabIndex = 6;
@@ -159,7 +162,7 @@
             this.StatusText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusText.AutoSize = true;
-            this.StatusText.Location = new System.Drawing.Point(7, 228);
+            this.StatusText.Location = new System.Drawing.Point(7, 257);
             this.StatusText.Name = "StatusText";
             this.StatusText.Size = new System.Drawing.Size(134, 13);
             this.StatusText.TabIndex = 9;
@@ -210,20 +213,52 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SpreadsheetNameLabel);
+            this.groupBox1.Controls.Add(this.SpreadsheetFileNameSelector);
+            this.groupBox1.Controls.Add(this.RenameSpreadsheetCheckbox);
             this.groupBox1.Controls.Add(this.HideColumnCheckbox);
             this.groupBox1.Controls.Add(this.MaskColumnCheckbox);
             this.groupBox1.Location = new System.Drawing.Point(10, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 64);
+            this.groupBox1.Size = new System.Drawing.Size(472, 89);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Spreadsheet Settings:";
+            // 
+            // RenameSpreadsheetCheckbox
+            // 
+            this.RenameSpreadsheetCheckbox.AutoSize = true;
+            this.RenameSpreadsheetCheckbox.Location = new System.Drawing.Point(6, 64);
+            this.RenameSpreadsheetCheckbox.Name = "RenameSpreadsheetCheckbox";
+            this.RenameSpreadsheetCheckbox.Size = new System.Drawing.Size(132, 17);
+            this.RenameSpreadsheetCheckbox.TabIndex = 15;
+            this.RenameSpreadsheetCheckbox.Text = "Rename Spreadsheet:";
+            this.RenameSpreadsheetCheckbox.UseVisualStyleBackColor = true;
+            this.RenameSpreadsheetCheckbox.CheckedChanged += new System.EventHandler(this.RenameSpreadsheetCheckbox_CheckedChanged);
+            // 
+            // SpreadsheetFileNameSelector
+            // 
+            this.SpreadsheetFileNameSelector.Location = new System.Drawing.Point(134, 61);
+            this.SpreadsheetFileNameSelector.Name = "SpreadsheetFileNameSelector";
+            this.SpreadsheetFileNameSelector.Size = new System.Drawing.Size(100, 20);
+            this.SpreadsheetFileNameSelector.TabIndex = 16;
+            this.SpreadsheetFileNameSelector.Text = "Spreadsheet";
+            // 
+            // SpreadsheetNameLabel
+            // 
+            this.SpreadsheetNameLabel.AutoSize = true;
+            this.SpreadsheetNameLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.SpreadsheetNameLabel.Location = new System.Drawing.Point(236, 65);
+            this.SpreadsheetNameLabel.Name = "SpreadsheetNameLabel";
+            this.SpreadsheetNameLabel.Size = new System.Drawing.Size(219, 13);
+            this.SpreadsheetNameLabel.TabIndex = 16;
+            this.SpreadsheetNameLabel.Text = "Do not include the file extension in the name.";
             // 
             // AgnosisUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 250);
+            this.ClientSize = new System.Drawing.Size(501, 279);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.WarningLabel);
             this.Controls.Add(this.label5);
@@ -268,6 +303,9 @@
         private System.Windows.Forms.CheckBox MaskColumnCheckbox;
         private System.Windows.Forms.CheckBox HideColumnCheckbox;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox RenameSpreadsheetCheckbox;
+        private System.Windows.Forms.TextBox SpreadsheetFileNameSelector;
+        private System.Windows.Forms.Label SpreadsheetNameLabel;
     }
 }
 

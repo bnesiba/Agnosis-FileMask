@@ -23,6 +23,8 @@ namespace AgnosisUI
             FolderBrowser.SelectedPath = Environment.CurrentDirectory;
             this.MaskColumnCheckbox.Checked = true;
             this.HideColumnCheckbox.Checked = false;
+            this.SpreadsheetFileNameSelector.Visible = false;
+            this.SpreadsheetNameLabel.Visible = false;
         }
 
         private void RunMaskButton_Click(object sender, EventArgs e)
@@ -45,6 +47,13 @@ namespace AgnosisUI
                 ClearStatusLog();
                 return;
             }
+            //verify filename is populated, if checkbox is checked
+            if (RenameSpreadsheetCheckbox.Checked && this.SpreadsheetFileNameIsValid())
+            {
+                ShowAlert("Spreadsheet file name is invalid. Please select a different name");
+                ClearStatusLog();
+                return;
+            }
 
             try
             {
@@ -60,7 +69,8 @@ namespace AgnosisUI
                     FileAccess.RemoveFiles(originalFilePaths);
                 }
                 WriteStatusLog("Creating Excel spreadsheet...");
-                ExcelInteropAccess.CreateAndPopulateSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\Spreadsheet.xlsx", HideColumnCheckbox.Checked, MaskColumnCheckbox.Checked);
+                var spreadsheetName = RenameSpreadsheetCheckbox.Checked ? SpreadsheetFileNameSelector.Text : "Spreadsheet";
+                ExcelInteropAccess.CreateAndPopulateSpreadsheet(fileMasks, $"{ResultDirSelector.Text}\\{spreadsheetName}.xlsx", HideColumnCheckbox.Checked, MaskColumnCheckbox.Checked);
                 WriteStatusLog("DONE!");
             }
             catch (Exception er)
@@ -119,6 +129,19 @@ namespace AgnosisUI
             if (ResultDirSelector.Enabled)
             {
                 toolTip1.SetToolTip(ResultDirSelector, ResultDirSelector.Text);
+            }
+        }
+        private void RenameSpreadsheetCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RenameSpreadsheetCheckbox.Checked)
+            {
+                SpreadsheetFileNameSelector.Visible = true;
+                SpreadsheetNameLabel.Visible = true;
+            }
+            else
+            {
+                SpreadsheetFileNameSelector.Visible = false;
+                SpreadsheetNameLabel.Visible = false;
             }
         }
 
@@ -180,6 +203,9 @@ namespace AgnosisUI
             }
         }
 
-        
+        private bool SpreadsheetFileNameIsValid()
+        {
+            return SpreadsheetFileNameSelector.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0;
+        }
     }
 }
